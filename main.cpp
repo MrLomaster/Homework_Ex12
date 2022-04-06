@@ -2,15 +2,16 @@
 #include "student.h"
 #include "subject.h"
 #include <vector>
+#include <list>
 #include <clocale>
 #include <windows.h>
 #include <stdlib.h>
 
 using namespace std;
 
-vector<string> Split(string line,char splitter)
+list<string> Split(string line,char splitter)
 {
-    vector<string> commands;
+    list<string> commands;
     string buffer = "", st1=line+" ";
     for(int i=0; i < st1.size(); i++)
     {
@@ -28,11 +29,11 @@ vector<string> Split(string line,char splitter)
 
     return commands;
 }
-vector<int> InputMark()
+list<int> InputMark()
 {
-   vector<int> buff;
-   vector<string> buffs;
-   vector<string>::iterator it;
+   list<int> buff;
+   list<string> buffs;
+   list<string>::iterator it;
    string line;
    cout<<"Write mark in the line: ";
    getline(cin>>ws,line);
@@ -47,11 +48,11 @@ vector<int> InputMark()
 
    return buff;
  }
-vector<Subject> InputSbujects()
+list<Subject> InputSbujects()
 {
    Subject obj1;
-   vector<Subject> buff;
-   vector<int> marks;
+   list<Subject> buff;
+   list<int> marks;
    string pred;
    while (pred!=".")
    {
@@ -77,7 +78,7 @@ int main()
    // Не работает
 
 //----------------------------Ввод---------------------------------
-    vector<Student> Students;
+    list<Student> Students;
     Student obj1;
     string fio;
     while(fio!=".")
@@ -94,7 +95,7 @@ int main()
 //-----------------------------------------------------------------
 //----------------------------Вывод--------------------------------
     cout<<"Output: "<<endl;
-    vector<Student>::iterator it;
+    list<Student>::iterator it;
     for(it=Students.begin();it!=Students.end();it++)
     {
        obj1=*it;

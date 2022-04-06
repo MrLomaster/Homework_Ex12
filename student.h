@@ -1,6 +1,7 @@
 #ifndef STUDENT_H
 #define STUDENT_H
 #include "subject.h"
+#include <list>
 #include <iostream>
 #include <vector>
 
@@ -10,7 +11,7 @@ using namespace std;
 class Student
 {
     string Fio;
-    vector<Subject> Pred;
+    list<Subject> Pred;
 
 public:
     Student();
@@ -19,14 +20,14 @@ public:
          Fio=fio;
     }
 
-    void addSubjects( vector<Subject> allsub)
+    void addSubjects( list<Subject> allsub)
     {
         Pred=allsub;
     }
 
     void PrintSdudent()
     {
-        vector<Subject>::iterator it;
+        list<Subject>::iterator it;
         Subject subject;
         cout << '\t' <<Fio<<"\t" << '\n';
         cout << '\n';

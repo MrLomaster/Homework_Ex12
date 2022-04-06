@@ -1,6 +1,7 @@
 #ifndef SUBJECT_H
 #define SUBJECT_H
 #include <iostream>
+#include <list>
 #include <vector>
 
 using namespace std;
@@ -8,10 +9,10 @@ using namespace std;
 class Subject
 {
       string SubjectName;
-      vector<int> Marks;
+      list<int> Marks;
 public:
     Subject();
-    void Vvod(string name,vector<int> marks)
+    void Vvod(string name,list<int> marks)
     {
 
             SubjectName=name;
@@ -19,7 +20,7 @@ public:
     }
     void PrintMark()
     {
-        vector<int>::iterator it;
+        list<int>::iterator it;
         for(it=Marks.begin();it!=Marks.end();it++)
         {
            cout<<*it<<" ";
